@@ -5,3 +5,6 @@
 # Bug Reports
 - [Jira Board](https://nactya.atlassian.net/jira/software/projects/KAN/boards/1)
 - [Jira Mobile Bugs](https://nactya.atlassian.net/jira/software/projects/KAN/boards/1)
+
+#Black Box
+-[Ref](https://docs.google.com/document/d/1XVAzyjUuMhRblVvE1hEeogctW5Jk6gRybAqfcDvO13E/edit?usp=sharing)

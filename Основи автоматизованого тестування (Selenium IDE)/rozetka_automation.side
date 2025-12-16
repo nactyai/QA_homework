@@ -1,0 +1,313 @@
+{
+  "id": "647bed3b-8e44-41eb-9db9-a3b6bd2b6bda",
+  "version": "2.0",
+  "name": "rozetka_automation",
+  "url": "https://rozetka.com.ua/",
+  "tests": [{
+    "id": "c13ed0d2-56c9-4561-b5e9-b2539bb7a37d",
+    "name": "TEST CASE 1: Product Search Verification",
+    "commands": [{
+      "id": "4f38ce7d-f218-4fea-80c5-547d7206435e",
+      "comment": "",
+      "command": "open",
+      "target": "https://rozetka.com.ua",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "52d2e148-5fa3-4f2a-9966-d832cd6e19bd",
+      "comment": "",
+      "command": "store",
+      "target": "iPhone 13",
+      "targets": [],
+      "value": "searchQuery"
+    }, {
+      "id": "edcb6616-4099-4b31-994c-e61cd4938270",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "css=input[name=\"search\"]",
+      "targets": [],
+      "value": "10000"
+    }, {
+      "id": "139dc66f-aa95-475c-936f-71e98cc82365",
+      "comment": "",
+      "command": "type",
+      "target": "css=input[name=\"search\"]",
+      "targets": [],
+      "value": "${searchQuery}"
+    }, {
+      "id": "6d0205bb-4782-408e-9a0e-d8471a804fdc",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//button[contains(text(), 'Знайти')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4d98fc57-6782-4a29-8861-f511dd017423",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "css=input[name=\"search\"]",
+      "targets": [],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "b91e7a3e-f8b4-496d-9688-809bedf7e1f6",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "xpath=//h1",
+      "targets": [],
+      "value": "20000"
+    }, {
+      "id": "54b7f0d5-092e-4860-9cea-ae1f84513c0a",
+      "comment": "",
+      "command": "assertText",
+      "target": "xpath=//h1",
+      "targets": [],
+      "value": "${searchQuery}"
+    }, {
+      "id": "c8e05831-1a1b-43fb-8e5a-2c4f01154cfc",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "xpath=(//a[contains(text(), '${searchQuery}')])[1]",
+      "targets": [],
+      "value": "15000"
+    }, {
+      "id": "6534cab4-0e8c-4fb2-bd63-f4327f8e395e",
+      "comment": "",
+      "command": "storeText",
+      "target": "xpath=(//a[contains(text(), '${searchQuery}')])[1]",
+      "targets": [],
+      "value": "foundProduct"
+    }, {
+      "id": "7d436951-6628-4612-873e-abce058bcff7",
+      "comment": "",
+      "command": "echo",
+      "target": "Product Found: ${foundProduct}",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "4386a961-8977-4290-90b3-f8a85d5df999",
+    "name": "TEST CASE 2: Cart Verification",
+    "commands": [{
+      "id": "07cb27f5-9aab-41a2-a914-9de5abf59907",
+      "comment": "",
+      "command": "open",
+      "target": "https://rozetka.com.ua",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6514a766-671d-470d-a036-8c44a8e0d927",
+      "comment": "",
+      "command": "store",
+      "target": "5",
+      "targets": [],
+      "value": "expectedCartCount"
+    }, {
+      "id": "7760f2a1-b386-4a06-bc49-00c974821e6d",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "xpath=//button[@aria-label='Відкрити корзину']",
+      "targets": [],
+      "value": "10000"
+    }, {
+      "id": "9f49610d-e62c-482f-a3b4-b1edef522659",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//button[@aria-label='Відкрити корзину']",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ab6fb4df-03c4-443f-9511-e2236d65f8b6",
+      "comment": "",
+      "command": "pause",
+      "target": "",
+      "targets": [],
+      "value": "1500"
+    }, {
+      "id": "b3ed34c7-39e8-4fb9-9676-a43573f8846e",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "xpath=//h2[contains(text(), 'Кошик')]",
+      "targets": [],
+      "value": "10000"
+    }, {
+      "id": "6f4a6910-1ffd-45f0-9843-5010f4260940",
+      "comment": "",
+      "command": "assertText",
+      "target": "xpath=//h2[contains(text(), 'Кошик')]",
+      "targets": [],
+      "value": "Кошик"
+    }, {
+      "id": "97245764-9b45-4981-a90c-eeda64a7daeb",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=[data-testid='modal-close-btn'] button",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "98f90b61-7310-467d-bdb6-00e2f2f65228",
+      "comment": "",
+      "command": "echo",
+      "target": "",
+      "targets": [],
+      "value": "Card opened succesfully"
+    }]
+  }, {
+    "id": "697f30b6-e527-4967-9d9a-125fc4a3f838",
+    "name": "TEST CASE 3: Category Verification",
+    "commands": [{
+      "id": "3d54e508-70b0-4174-adec-a1558a8c7d86",
+      "comment": "",
+      "command": "open",
+      "target": "https://rozetka.com.ua",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "849d5b16-c587-44d2-9e4e-e0733befd45a",
+      "comment": "",
+      "command": "store",
+      "target": "Зоотовари",
+      "targets": [],
+      "value": "categoryName"
+    }, {
+      "id": "60a86ef4-10c0-4c0f-b06c-a3d3e1fb475b",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "xpath=//button[contains(text(), 'Каталог')]",
+      "targets": [],
+      "value": "10000"
+    }, {
+      "id": "56ceaa79-d850-451f-808a-29c3cd7eda59",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//button[contains(text(), 'Каталог')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "02823282-a989-4556-a341-af4323b303fc",
+      "comment": "",
+      "command": "pause",
+      "target": "",
+      "targets": [],
+      "value": "2000"
+    }, {
+      "id": "250163db-496d-4c10-b5dc-d6a98aed0a11",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "xpath=(//*[contains(normalize-space(.), '${categoryName}')])[1]",
+      "targets": [],
+      "value": "10000"
+    }, {
+      "id": "bf8e77c9-3472-44a8-a8bd-54b461fd010d",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=(//*[contains(normalize-space(.), '${categoryName}')])[1]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fe02fa11-4d75-4b3a-8c7e-19c5894a1a64",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "xpath=//h2",
+      "targets": [],
+      "value": "20000"
+    }, {
+      "id": "dbe6c766-c70c-4a33-9014-0738e679c5f5",
+      "comment": "",
+      "command": "storeXpathCount",
+      "target": "xpath=//div[contains(@class, 'goods-tile')]",
+      "targets": [],
+      "value": "productsCount"
+    }, {
+      "id": "5dbefb52-fd35-4337-8522-370e6802b387",
+      "comment": "",
+      "command": "echo",
+      "target": "Found Products: ${productsCount}",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "4a9940a9-ff33-436f-9e0d-a40bf2a6258b",
+    "name": "TEST CASE 4: Filters Verification",
+    "commands": [{
+      "id": "1d688ab8-c2ab-47db-86f9-6bd08d24a86e",
+      "comment": "",
+      "command": "open",
+      "target": "https://rozetka.com.ua/ua/mobile-phones/c80003/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e9bd51f8-5810-4969-aac5-a85018d26e4e",
+      "comment": "",
+      "command": "store",
+      "target": "Apple",
+      "targets": [],
+      "value": "brandName"
+    }, {
+      "id": "a5ffeec1-a95d-4dc1-aae0-d8867de2898c",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "xpath=//rz-product-tile[1]",
+      "targets": [],
+      "value": "15000"
+    }, {
+      "id": "fb6ea7e0-c782-49a0-a041-071faabbdaab",
+      "comment": "",
+      "command": "assertText",
+      "target": "xpath=//h1",
+      "targets": [],
+      "value": "Мобільні телефони"
+    }, {
+      "id": "b8f67c47-b6ee-4dba-a6df-8a354328936e",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//a[contains(@class,'checkbox-filter-link') and contains(text(),'Apple')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d55c24ac-0c5f-4f74-b962-c8664eadc2dc",
+      "comment": "",
+      "command": "pause",
+      "target": "",
+      "targets": [],
+      "value": "5000"
+    }, {
+      "id": "aeb4f9a6-5acd-4152-9a82-3df73ad220fa",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "xpath=//rz-product-tile[1]",
+      "targets": [],
+      "value": "15000"
+    }, {
+      "id": "eddaef83-d107-48c0-92bf-01cfe4b803a4",
+      "comment": "",
+      "command": "pause",
+      "target": "",
+      "targets": [],
+      "value": "2000"
+    }, {
+      "id": "e326f7bb-2da0-4d32-9ac4-a6faaaea663b",
+      "comment": "",
+      "command": "storeText",
+      "target": "xpath=/html/body/rz-app-root/rz-category/rz-page-layout/div/div/div/main/rz-catalog-layout/div[2]/section/rz-catalog-goods/div[1]/rz-product-tile/article/a[2]",
+      "targets": [],
+      "value": "productName"
+    }, {
+      "id": "90145105-b622-4121-96fc-904919d7a064",
+      "comment": "",
+      "command": "echo",
+      "target": "",
+      "targets": [],
+      "value": "Filter applied. First product: ${productName}"
+    }]
+  }],
+  "suites": [{
+    "id": "52f8aa36-1825-4ca2-8e8f-543bd02d5023",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://rozetka.com.ua/"],
+  "plugins": []
+}
